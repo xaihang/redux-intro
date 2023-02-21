@@ -1,17 +1,20 @@
-// // useSelector is a hook provided by the react-redux library
-// import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 // import { useState } from 'react';
 
 import './App.css';
 import ElementForm from './ElementForm/ElementForm';
 import ElementList from './ElementList/ElementList';
 
+function App() {
 
-
-function App () {
+  const count = useSelector((store) => store.count);
+  const dispatch = useDispatch();
 
   return (
     <div>
+      <p>{count}</p>
+      <button onClick={() => dispatch({ type: 'INCREASE' })}>Increase</button>
+      <button onClick={() => dispatch({ type: 'DECREASE' })}>Decrease</button>
       {/* Form to allow users to add new element */}
       <ElementForm />
 
@@ -19,7 +22,6 @@ function App () {
       <ElementList />
     </div>
   );
-
 }
 
 //! original code before refactoring

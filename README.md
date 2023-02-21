@@ -1,5 +1,20 @@
 # REDUX INTRO NOTES
 
+## what is redux?
+Redux is an open-source JavaScript library for managing application state. The core idea behind Redux is that the entire state of an application is stored in a single object tree, which can be modified only by emitting an action. An action is a plain JavaScript object that describes a change to the state. When an action is dispatched, Redux uses a pure function called a reducer to calculate the new state of the application.
+
+Redux helps manage the state of complex applications by providing a predictable and centralized way to handle application data flow. It can be used to manage the state of any type of application, not just React applications. Because the state is stored in a single object tree, it is easier to debug and test an application that uses Redux.
+
+Some of the benefits of using Redux include:
+
+1. Predictable state management: Because the entire state of the application is stored in a single object tree, it is easy to predict how the state will change in response to an action.
+
+2. Centralized state management: With Redux, all of the application state is stored in a single place, making it easier to manage and maintain the state of a complex application.
+
+3. Debugging and testing: Because the state of the application is stored in a single object tree, it is easier to debug and test the application.
+
+4. Developer tools: Redux provides a set of developer tools that can be used to inspect and debug the state of the application.
+
 ## installation 
 ```md
 $ npm install redux@4 react-redux@7 redux-logger@3
@@ -201,6 +216,10 @@ const elementList = (state = [], action) => {
 ```
 
 ## Spread
+The spread operator is a JavaScript syntax feature that allows you to spread the contents of an iterable object, such as an array or an object, into another array or object. In JavaScript, the spread operator is represented by three dots (...).
+
+In Redux, the spread operator is often used when writing reducer functions to update the state of the application. When the state is an object, the spread operator can be used to create a copy of the state and update one or more properties of the state.
+
 For the elements data, we want to add to an array so we can see all the elements added. How have we added to an array in the past?
 ```js
 const elementList = (state = [], action) => {
@@ -348,3 +367,5 @@ function ElementList() {
 }
 ```
 
+## flow of redux
+![flow drawing](./public/327752958_1272726083315582_2715051443429036585_n%20(1).jpg)
